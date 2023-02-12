@@ -1,0 +1,5 @@
+Project: Fruit_Basket
+Team members: Jialin(Leader), Apple, Banana, Cherry, Durian and Filbert
+''' I added Durian and Filbert in the members. '''
+
+
