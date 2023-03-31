@@ -26,7 +26,7 @@ class Environment():
     def add_agent(self,agent):
         self.animal_agents.append(agent)
     
-    def simulate(self,tot_time):
+    def simulate(self, tot_time):
         for dt in range(tot_time):
             clear_output(wait=True)
             plt.figure(figsize=(6, 6))    
@@ -47,7 +47,7 @@ class Environment():
                         del agent
                     else:
                         temp_agents.append(agent)
-                        temp_new_agents = agent.procreate(dt, self.animal_agents)
+                        temp_new_agents = agent.procreate(self.animal_agents, dt)
                         if len(temp_new_agents) > 0:
                             temp_agents.extend(temp_new_agents)
                 elif agent.ptype == "Predator":
@@ -84,7 +84,7 @@ class Environment():
                         del agent
                     else:
                         temp_agents.append(agent)
-                        temp_new_agents = agent.procreate(dt, self.animal_agents)
+                        temp_new_agents = agent.procreate(self.animal_agents, dt)
                         if len(temp_new_agents) > 0:
                             temp_agents.extend(temp_new_agents)
                 elif agent.ptype == "Predator":
@@ -111,3 +111,7 @@ class Environment():
         plt.plot(self.times,self.dark_brown_animals,label="Dark Brown")
         plt.legend(loc="best")
         plt.show()  
+
+
+
+
